@@ -8,6 +8,6 @@ FROM eclipse-temurin:17-jdk-alpine
 #FROM eclipse-temurin:17-jdk-alpine
 #COPY --from=build /opt/app/target/*.jar hotelentities.jar
 
-ADD target/hotelentities.jar hotelentities.jar
+ADD /home/mohs/.jenkins/workspace/hotel/entity/hotelmanagemententities/target/hotelentities.jar hotelentities.jar
 
 ENTRYPOINT ["java","-jar","/hotelentities.jar"]
