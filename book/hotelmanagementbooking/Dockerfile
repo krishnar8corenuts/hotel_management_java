@@ -6,7 +6,6 @@ COPY ./ /opt/app
 RUN mvn clean install -DskipTests
 # Run spring boot in Docker
 FROM openjdk:8-jdk-alpine
-COPY --from=build /opt/app/target/*.jar common-model.jar
-ENV PORT 9011
-EXPOSE $PORT
-ENTRYPOINT ["java","-jar","/common-model.jar"]
+COPY --from=build /opt/app/target/*.jar hotelbooking.jar
+
+ENTRYPOINT ["java","-jar","/hotelbooking.jar"]
