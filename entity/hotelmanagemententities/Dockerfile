@@ -10,11 +10,10 @@
  
 #ENTRYPOINT ["java","-jar","/hotelentities.jar"]
 
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ADD target/hotelentities.jar hotelentities.jar
 
-FROM adoptopenjdk/openjdk11:alpine-jre
+ENTRYPOINT ["java","-jar","hotelentities.jar"]
 
-ARG APP_NAME="hotelentities"
-ARG JAR_FILE="/build/libs/${APP_NAME}.jar"
-
-COPY ${JAR_FILE} hotelentities.jar
-ENTRYPOINT ["java","-jar", "hotelentities.jar"]
+ 
