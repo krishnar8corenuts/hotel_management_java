@@ -14,8 +14,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 ARG APP_NAME="hotelentities"
-ARG APP_VERSION="0.0.1"
-ARG JAR_FILE="/build/libs/${APP_NAME}-${APP_VERSION}.jar"
+ARG JAR_FILE="/build/libs/${APP_NAME}.jar"
 
 COPY ${JAR_FILE} hotelentities.jar
 ENTRYPOINT ["java","-jar", "hotelentities.jar"]
